@@ -1,0 +1,112 @@
+Metadata-Version: 2.1
+Name: fies
+Version: 1.2.3
+Summary: A tool to easily read and write json files, pickle files, binary files, csv files and plain text files.
+Home-page: https://github.co.jp/
+Author: le_lattelle
+Author-email: g.tiger.ml@gmail.com
+License: CC0 v1.0
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: Topic :: Software Development :: Libraries
+Classifier: License :: CC0 1.0 Universal (CC0 1.0) Public Domain Dedication
+Description-Content-Type: text/markdown
+Requires-Dist: relpath
+Requires-Dist: ezpip
+Requires-Dist: sout
+
+# fies
+
+下の方に日本語の説明があります
+
+## Overview
+- A tool to easily read and write json files, YAML files, pickle files, binary files, csv files and plain text files.
+
+## Usage
+```python
+import fies
+
+# Save json file
+fies["./test.json"] = {"hoge": 23, "dummy_data": "fuga"}
+
+# Read json file
+print(fies["./test.json"])	# -> {'hoge': 23, 'dummy_data': 'fuga'}
+
+# Save plain text file
+fies["./test.txt"] = "hogehoge"
+
+# Read plain text file
+print(fies["./test.txt"])	# -> hogehoge
+
+# Save pickle file
+fies["./test.pickle"] = [("hoge", 23), 5.7]
+
+# Read pickle file
+print(fies["./test.pickle"])	# -> [('hoge', 23), 5.7]
+
+# Save csv file
+fies["./test.csv"] = [
+	["hoge", "fuga"],
+	[23, True],	# Numbers and bool types will be automatically converted to strings.
+	['Hey, "Escape" man!\n']	# Any line breaks, commas, or double quotation marks will be automatically escaped.
+]
+
+# Save YAML file
+fies["./test.yml", "yaml"] = {"hoge": {"fuga": 13, 77: [1,2]}}
+```
+
+## Advanced usage
+```python
+# Save binary file
+fies["./test.bin", "binary"] = b"hoge"
+
+# format-specified save
+fies["./test.myext", "json"] = {"hoge": 23, "dummy_data": "fuga"}
+```
+
+## 概要
+- jsonファイル, YAMLファイル, pickleファイル, バイナリファイル, csvファイル, プレーンテキストのファイルを簡単に読み書きできるツールです。
+
+## 使い方
+```python
+import fies
+
+# jsonファイル保存
+fies["./test.json"] = {"hoge": 23, "dummy_data": "fuga"}
+
+# jsonファイル読み込み
+print(fies["./test.json"])	# -> {'hoge': 23, 'dummy_data': 'fuga'}
+
+# プレーンテキストファイル書き出し
+fies["./test.txt"] = "hogehoge"
+
+# プレーンテキストファイル読み込み
+print(fies["./test.txt"])	# -> hogehoge
+
+# pickleファイル書き出し
+fies["./test.pickle"] = [("hoge", 23), 5.7]
+
+# pickleファイル読み込み
+print(fies["./test.pickle"])	# -> [('hoge', 23), 5.7]
+
+# csvファイル書き出し
+fies["./test.csv"] = [
+	["hoge", "fuga"],
+	[23, True],	# 数値や真理値型のものは文字列に変換される
+	['Hey, "Escape" man!\n']	# 改行やカンマ、ダブルクオーテーションがある場合は自動的にエスケープされる
+]
+
+# yamlファイル書き出し
+fies["./test.yml", "yaml"] = {"hoge": {"fuga": 13, 77: [1,2]}}
+```
+
+## 発展的な使い方
+```python
+# バイナリファイル書き出し
+fies["./test.bin", "binary"] = b"hoge"
+
+# フォーマット指定書き出し
+fies["./test.myext", "json"] = {"hoge": 23, "dummy_data": "fuga"}
+```
+
+

@@ -1,0 +1,61 @@
+{% extends "base_structure.html" %}
+{% block content %}
+
+    <div class="page-contents2">
+        <div class="sidebar-papa">
+            <div class="sidebar-container">
+                <div class="sidebar">
+                    <img class="sidebar-logo" src="/static/images/favicon.ico" alt="logo" height="50px">
+                    <h1 class="sidebar-title">{{ navtitle }}</h1>
+                    
+                </div>
+                <p> Your personal sidebar to browse memes and quick shortcuts.</p>
+                <div class="btnsd">
+                    <a href="{{ url_for('new_post') }}"  class="create_post">Create Post</a>
+                    <a href="{{ url_for('discover') }}" class="create_post_outline"><strong>Browse Memes</strong></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="content">
+        <h1>About</h1>
+        <p>Welcome to Mem, your ultimate destination for laughter, creativity, and community. We're more than just a meme-sharing platform; we're a space where humor and conversation collide in the most entertaining way possible.</p>
+
+        <p><strong>Our Mission</strong></p>
+        
+        <p>At Mem, our mission is simple: to bring joy to people's lives through the power of memes and meaningful discussions. We believe that laughter is a universal language, and it's our goal to unite people from all walks of life through shared humor and thought-provoking conversations.</p>
+        
+        <p><strong>Why Mem?</strong></p>
+        
+        <p><em>Endless Laughter:</em> Get ready to burst into laughter as you explore a vast collection of hilarious memes. Our platform is a treasure trove of the funniest content on the internet, updated regularly to keep you entertained.</p>
+        
+        <p><em>Community Connection:</em> Mem is more than just memes; it's a vibrant community of meme lovers and intellectual enthusiasts. Engage in conversations about a wide range of topics, from pop culture and science to life's everyday quirks.</p>
+        
+        <p><em>Safe and Respectful:</em> We're committed to creating a safe and respectful space for everyone. Mem is a platform where diversity and inclusivity are celebrated, and we have strict guidelines in place to ensure a positive experience for all users.</p>
+        
+        <p><em>Create and Share:</em> Have a brilliant meme idea? Share it with the world! Mem allows you to create and upload your own memes, so you can contribute to the laughter and creativity that defines our platform.</p>
+        
+        <p><strong>How Mem Works</strong></p>
+        
+        <p><em>Browse Memes:</em> Start your journey by exploring an ever-growing library of memes. Whether you're into classic memes, trending topics, or niche humor, we've got it all.</p>
+        
+        <p><em>Join Discussions:</em> Dive into discussions and engage with a community of like-minded individuals. Share your thoughts, ask questions, and connect with people who share your interests.</p>
+        
+        <p><em>Create Memes:</em> Unleash your inner meme creator! Use our user-friendly tools to craft your own hilarious memes and share them with the world.</p>
+        
+        <p><em>Stay Informed:</em> Keep up with the latest trends, news, and happenings through our informative articles and news section. Mem is your one-stop destination for both humor and knowledge.</p>
+        
+        <p><strong>Join the Mem Community</strong></p>
+        
+        <p>Ready to embark on a journey filled with laughter and meaningful conversations? Join Mem today and become a part of our growing community. Whether you're here to share a smile, spark a debate, or simply connect with others, Mem is the place to be.</p>
+        
+        <p><strong>Contact Us</strong></p>
+        
+        <p>Got questions or suggestions? We'd love to hear from you! Reach out to our friendly support team at <a href="mailto:contact@memplatform.net">contact@memplatform.net</a> or connect with us on social media <a href="#">@MemPlatform</a>.</p>
+        
+        <p>Thank you for choosing Mem as your go-to destination for memes, humor, and discussions. Let's create, share, and laugh together!</p>
+        
+    </div> 
+    
+{% endblock %}

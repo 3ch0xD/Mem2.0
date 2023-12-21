@@ -1,0 +1,100 @@
+
+.article{
+    background-color:#1A1A1B ;
+    border: 1px solid #343536;
+    border-radius: 5px;
+    margin: 10px 10px;
+    padding: 10px ;
+    padding-right: 30px;
+}
+
+.article h1{
+    color: #fff;
+    padding: 0 10px;
+    margin: 0;
+}
+
+.text-muted1{
+    color: #616161;
+    font-size: 20px;
+    padding: 0;
+    border-bottom: 1px solid #ffffff25;
+}
+
+.image{
+    margin: 10px 10px;
+    max-width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.article p{
+    margin: 0;
+    color: #fff;
+    padding: 0 10px;
+}
+
+.author{
+    text-decoration: none;
+    font-size: 25px;
+    padding: 0;
+    margin: 0;
+}
+
+.author a{
+    text-decoration: none;
+}
+
+.author-b{
+    text-decoration: none;
+    margin-bottom: 0;
+    font-size: 25px;
+    color:red;
+    padding: 0;
+    margin-left: 10px;
+}
+
+.author-b a{
+    text-decoration: none;
+}
+
+.author-b::after{
+    background-image: url(/ranks/owner.png);
+    position: absolute;
+    font-size: 10px;
+    color: gold;
+    content: "owner";
+}
+
+.full_post{
+    text-decoration: underline solid 1px #fff;
+}
+
+.full_post:hover{
+    color: #616161;
+}
+
+.account-pfpj{
+    padding: 0;
+    margin: 0;
+    border-radius: 50%;
+    width: 50px;
+    margin-left: 10px;
+}
+
+.text-deco-none{
+    text-decoration: none;
+}
+
+.author-b-b{
+    color: #9F2B68;
+}
+
+.author-b-b::after{
+    content: 'legend';
+    color: 	#6495ED;
+    font-size: 12px;
+    position: absolute;
+}

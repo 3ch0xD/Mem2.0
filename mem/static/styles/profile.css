@@ -1,0 +1,89 @@
+
+
+.media{
+    background-color: #1A1A1B;
+    padding: 40PX 40PX;
+    border: 1PX SOLID #ffffff34;
+    border-radius: 10PX;
+}
+
+.content-section{
+    padding: 50px 40px;
+    width: 125%;
+    height: 200%;
+}
+
+.account-heading{
+    font-size: 40px;
+    color: #fff;
+}
+
+.account-heading-b{
+    font-size: 40px;
+    color:red;
+}
+
+.account-heading-b::after{
+    background-image: url(/ranks/owner.png);
+    position: absolute;
+    font-size: 10px;
+    color: gold;
+    content: "owner";
+}
+
+.account-img{
+    height: 150px;
+    border: 2px solid #343536;
+    width: 150px;
+}
+
+legend{
+    color: #fff;
+}
+
+.form_label{
+    margin: 5px 0px;
+    color: #fff;
+}
+
+.s_btn{
+    background-color:#343536 ;
+    outline: none;
+    color: #fff;
+    border: 1px solid #fefeff46;
+    padding: 10px 10px;
+    margin: 10px 0px;
+    border-radius: 10px;
+}
+
+.s_btn:hover{
+    background-color: #fefeff46;
+}
+
+.error{
+    background-color: #F8D7DA;
+    padding: 15px 20px;
+    border-radius: 5px;
+    border: 1px solid #F1AEB5;
+    color: #58151C;
+    display: block;
+}
+
+input{
+    color: #fff;
+}
+
+header{
+    background-color: transparent;
+}
+
+.call2action-btns{
+    display: none;
+}
+
+@media screen and (max-width: 312px) {
+    .media{
+        background-color: transparent;
+    }
+    
+}

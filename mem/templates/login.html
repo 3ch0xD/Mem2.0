@@ -1,0 +1,63 @@
+{% extends "base_structure.html" %}
+{% block content %}
+    <div class="container">
+        <form action="" method="post">
+            {{ form.hidden_tag() }}
+            <fieldset>
+                <legend>Login In To Mem</legend>
+                <div class="form-group">
+                    {{ form.email.label(class="form_label") }}
+
+
+                    {% if form.email.errors %}
+                    {{ form.email(class="form_field_invalid") }}
+                    <div class="invalid-feedback">
+                        {% for error in form.email.errors %}
+                            <span>
+                                {{ error }}
+                            </span>
+                        {% endfor %}
+                    </div>
+                {% endif %}
+
+
+                    {{ form.email(class="form-control") }}
+                </div>
+                <div class="form-group">
+                    {{ form.password.label(class="form_label") }}
+
+
+                    
+                    {% if form.password.errors %}
+                    {{ form.password(class="form_field_invalid") }}
+                    <div class="invalid-feedback">
+                        {% for error in form.password.errors %}
+                            <span>
+                                {{ error }}
+                            </span>
+                        {% endfor %}
+                    </div>
+                {% endif %}
+
+
+                    {{ form.password(class="form-control") }}
+                </div>
+                <div class="remember-me-div">
+                    {{ form.remember(class="remember_me") }}
+                    {{ form.remember.label(class="remember_me") }}
+                </div>
+            </fieldset>
+            <div class="form-group">
+                {{ form.submit(class="s_btn") }}
+            </div>
+            <small class="greyed_out">
+                <a href="{{ url_for('request_reset') }}">Forgot your password?</a>
+            </small>
+        </form>
+    </div>
+    <div class="form-group">
+        <small class="greyed_out">
+            Don't Have An Account Yet? <a href="{{ url_for('signup') }}">Sign Up!</a>
+        </small>
+    </div>
+{% endblock %}

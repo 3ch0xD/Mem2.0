@@ -1,0 +1,43 @@
+{% extends "base_structure.html" %}
+{% block content %}
+    <div class="page-contents2">
+        <div class="sidebar-papa">
+            <div class="sidebar-container">
+                <div class="sidebar">
+                    <img class="sidebar-logo" src="/static/images/favicon.ico" alt="logo" height="50px">
+                    <h1 class="sidebar-title">{{ navtitle }}</h1>
+                    
+                </div>
+                <p> Your personal sidebar to browse memes and quick shortcuts.</p>
+                <div class="btnsd">
+                    <a class="create_post" href="{{ url_for('new_post') }}"><strong>Create Post</strong></a>
+                    <a href="{{ url_for('discover') }}" class="create_post_outline"><strong>Browse Memes</strong></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+        <div class="bb">
+            {% if current_user.is_authenticated %}
+                <div class="pfp">
+                    <img class="rounded-circle account-img" src="{{ profile_picture }}" height="50px">
+                </div>
+            {% endif %}
+                <div class="searchbar">
+                    <div class="beauty">
+                        
+                        <a href="{{ url_for('discover') }}"><i class='bx bx-search-alt-2'></i>Search</a>
+                    </div>
+                </div>
+        </div>
+        
+        {% include "post.html" %}
+    
+        {% for page_num in mem_posts.iter_pages() %}
+            {% if page_num %}
+                <a class="btn btn-outline-info" href="{{ url_for('home1', page=page_num) }}"> {{ page_num }} </a>
+            {% else %}
+                ...
+            {% endif %}
+        {% endfor %}
+{% endblock %}

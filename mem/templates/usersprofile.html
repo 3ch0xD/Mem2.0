@@ -1,0 +1,31 @@
+{% extends "base_structure.html" %}
+{% block content %}
+    <div class="profile-of-user">
+        <img src="/static/profile_pictures/{{ user.profile_picture }}" alt="" class="account-pfpjj" height="125px">
+
+
+        {% if user.email == 'umerthepro2009@gmail.com' %}
+        <h2 class="account-heading" style="display: none;">{{ user.username }}</h2>
+        <h2 class="account-heading-b">{{ user.username }}</h2>
+        {% elif user.email == 'aayansyed38@gmail.com' or user.email == 'abdul.moizsheikh03@gmail.com' or user.email == 'adiytacc69@gmail.com' or user.email == 'sohan.k.691516@gmail.com' %}
+            <h2 class="account-heading" style="display: none;">{{ user.username }}</h2>
+            <h2 class="account-heading-b-b">{{ user.username }}</h2>
+        {% else %}
+          <h2 class="account-heading">{{ user.username }}</h2>
+        {% endif %}
+
+        <p class="text-muted1">Has Posted <strong>{{ mem_posts.total }}</strong> Mem(s)</p>
+        <p>{{ user.about_me }}</p>
+    </div>
+    <h1 class="GAMBATE">Posts By {{ user.username }} ({{ mem_posts.total }})</h1>
+            
+            {% include "post.html" %}
+        
+            {% for page_num in mem_posts.iter_pages() %}
+                {% if page_num %}
+                    <a class="btn btn-outline-info" href="{{ url_for('user_posts', username=user.username, page=page_num) }}"> {{ page_num }} </a>
+                {% else %}
+                    ...
+                {% endif %}
+            {% endfor %}
+{% endblock %}

@@ -1,0 +1,15 @@
+*{
+    color: #fff;
+}
+
+.div{
+    padding: 0 10px;
+}
+
+span{
+    color: yellow;
+}
+
+@media screen and (max-width: 933px) {
+    
+}

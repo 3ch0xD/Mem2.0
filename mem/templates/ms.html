@@ -1,0 +1,45 @@
+{% extends "base_structure.html" %}
+{% block content %}
+    <div class="article">
+            <img src="/static/profile_pictures/{{ mem.author.profile_picture }}" alt="" class="account-pfpj" height="50px">
+            {% if mem.author.email == 'umerthepro2009@gmail.com' %}
+            <a href="{{ url_for('user_posts', username=mem.author.username) }}" class="text-deco-none"><h2 class="author-b">{{ mem.author.username }}</h2></a>
+                <p class="author" style="display: none;"> {{ mem.author.username }} </p>
+            {% else %}
+            <a href="{{ url_for('user_posts', username=mem.author.username) }}" class="text-deco-none"><p class="author"> {{ mem.author.username }} </p></a>
+            {% endif %}
+        <br><p class="text-muted1"> {{ mem.date_posted.strftime('%Y-%m-%d') }} </p>
+        {% if current_user == mem.author %}
+            <div class="botns">
+                <a href="{{ url_for('update_ms', mem_id=mem.id) }}" class="btn btn-primary update_button">Update Post</a>
+                <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#exampleModalCenter">
+                    Delete
+                  </button>
+            </div>
+        {% endif %}
+        <h1 class="border-bottom-1"> {{ mem.title }} </h1>
+        <p class="description"> {{ mem.description }} </p>
+        <img src="/static/memes/{{ mem.meme }}" alt="" class="image">
+    </div>
+    <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLongTitle">Delete Post?</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true" data-bs-dismiss="modal">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              Are you sure you want to continue deleting this post? This cant be undone.
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+              <form action="{{ url_for('delete_post', mem_id=mem.id) }}" method="POST">
+                <input type="submit" class="btn btn-danger" value="Delete">
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+{% endblock %}

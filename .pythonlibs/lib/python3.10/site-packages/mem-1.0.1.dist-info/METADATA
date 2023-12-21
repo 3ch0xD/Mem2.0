@@ -1,0 +1,38 @@
+Metadata-Version: 2.1
+Name: mem
+Version: 1.0.1
+Summary: memorize tool
+Home-page: https://github.co.jp/
+Author: bib_inf
+Author-email: contact.bibinf@gmail.com
+License: CC0 v1.0
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: Topic :: Software Development :: Libraries
+Classifier: License :: CC0 1.0 Universal (CC0 1.0) Public Domain Dedication
+Description-Content-Type: text/markdown
+Requires-Dist: xxhash
+Requires-Dist: sout
+Requires-Dist: relpath
+Requires-Dist: fileinit
+
+file memorize (under construction)
+
+```python
+import mem
+
+def add_str(s0, s1):
+	time.sleep(3)
+	return s0 + s1
+
+# memorize tool [mem]
+memorized_func = mem(
+	add_str,	# 計算結果をメモ化したい関数
+	"add_str",	# 関数識別用の文字列
+	mem_dir = "./"	# メモの置き場所
+)
+ret_str = memorized_func("Hello", ", World!!\n")
+print(ret_str)
+```
+
+

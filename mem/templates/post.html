@@ -1,0 +1,20 @@
+{% for mem in mem_posts.items %}
+        <div class="article">
+                <img src="/static/profile_pictures/{{ mem.author.profile_picture }}" alt="" class="account-pfpj" height="50px">
+                {% if mem.author.email == 'umerthepro2009@gmail.com' %}
+                <a href="{{ url_for('user_posts', username=mem.author.username) }}" class="text-deco-none"><h2 class="author-b">{{ mem.author.username }}</h2></a>
+                    <p class="author" style="display: none;"> {{ mem.author.username }} </p>
+                {% elif mem.author.email == 'aayansyed38@gmail.com' or user.email == 'abdul.moizsheikh03@gmail.com' or user.email == 'adiytacc69@gmail.com' or user.email == 'sohan.k.691516@gmail.com' %}
+                    <a href="{{ url_for('user_posts', username=mem.author.username) }}" class="text-deco-none"><h2 class="author-b-b">{{ mem.author.username }}</h2></a>
+                    <p class="author" style="display: none;"> {{ mem.author.username }} </p>
+                {% else %}
+                <a href="{{ url_for('user_posts', username=mem.author.username) }}" class="text-deco-none"><p class="author"> {{ mem.author.username }} </p></a>
+                {% endif %}
+            <br><p class="text-muted1"> {{ mem.date_posted.strftime('%Y-%m-%d') }} </p>
+                <a href="{{ url_for('ms', mem_id=mem.id) }}" class="full_post">
+                    <h1 class="border-bottom-1"> {{ mem.title }} </h1>
+                </a>
+            <p class="description"> {{ mem.description }} </p>
+            <img src="/static/memes/{{ mem.meme }}" alt="" class="image">
+        </div>
+{% endfor %}

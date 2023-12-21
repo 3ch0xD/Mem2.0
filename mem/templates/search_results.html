@@ -1,0 +1,14 @@
+{% extends "base_structure.html" %}
+{% block content %}
+
+<div class="div">
+
+<h1>Search Results</h1>
+    
+<p>Search Results For: <span>{{ search_query }}</span></p>
+
+</div>
+
+{% include "post.html" %}
+
+{% endblock %}

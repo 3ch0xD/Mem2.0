@@ -1,0 +1,31 @@
+{% extends "base_structure.html" %}
+{% block content %}
+    <div class="container">
+        <form action="" method="POST" enctype="multipart/form-data">
+            {{ form.hidden_tag() }}
+            <fieldset>
+                <legend>Update Mem</legend>
+                <div class="form-group">
+                    {{ form.title.label(class="form_label") }}
+
+
+                    {% if form.title.errors %}
+                        {{ form.title.errors }}
+                    {% endif %}
+                    
+
+                    {{ form.title(class="form-control w-75 dinput") }}
+                </div>
+                <div class="form-group">
+                    {{ form.description.label(class="form_label") }}
+                    {{ form.description(class="form-control w-75 dinput") }}
+                </div>
+                    <img src="/static/memes/{{ mem.meme }}" alt="" class="current_post_image">
+                <div class="form-group">
+                    {{ form.submitU(class="s_btn") }}
+                </div>
+                <p style="visibility: hidden;" class="scroll-enable">SLEEP</p>
+            </fieldset>
+        </form>
+    </div>
+{% endblock %}

@@ -1,0 +1,72 @@
+{% extends "base_structure.html" %}
+{% block content %}
+{% if form.email.errors %}
+  <p class="error"> An account with that email already exists!</h1>
+{% endif %}
+<div class="content-section">
+    <div class="media">
+      <img id="pfp" class="rounded-circle account-img" src="{{ profile_picture }}">
+      <div class="media-body">
+        {% if current_user.email == 'umerthepro2009@gmail.com' %}
+        <h2 class="account-heading" style="display: none;">{{ current_user.username }}</h2>
+        <h2 class="account-heading-b">{{ current_user.username }}</h2>
+        {% elif current_user.email == 'aayansyed38@gmail.com' or user.email == 'abdul.moizsheikh03@gmail.com' or user.email == 'sohan.k.691516@gmail.com' or user.email == 'adiytacc69@gmail.com'%}
+          <h2 class="account-heading" style="display: none;">{{ current_user.username }}</h2>
+          <h2 class="account-heading-b-b">{{ current_user.username }}</h2>
+        {% else %}
+          <h2 class="account-heading">{{ current_user.username }}</h2>
+        {% endif %}
+        <p class="text-secondary">{{ current_user.email }}</p>
+        <p style="color: #fff;">{{ current_user.about_me }}</p>
+      </div>
+    <div class="container">
+      <form action="" method="post" enctype="multipart/form-data">
+          {{ form.hidden_tag() }}
+          <fieldset>
+              <legend>Account Info</legend>
+              <div class="form-group">
+                  {{ form.username.label(class="form_label") }}
+
+
+                  {% if form.username.errors %}
+                      <div class="invalid-feedback">
+                          {% for error in form.username.errors %}
+                              <span>
+                                  {{ error }}
+                              </span>
+                          {% endfor %}
+                      </div>
+                  {% endif %}
+
+                  {{ form.username(class="form-control w-75") }}
+              </div>
+              <div class="form-group">
+                  {{ form.email.label(class="form_label") }}
+
+
+
+                  {{ form.email(class="form-control w-75") }}
+              </div>
+
+              <div class="form-group">
+                {{ form.about_me.label(class="form_label") }}
+                {{ form.about_me(class="form-control w-75") }}
+              </div>
+              <div class="form-group">
+                {{ form.pfp.label(class="form_label") }}<br>
+                {{ form.pfp(class="form-control-file color-w") }}
+                <p style="color: #6b6b6b;">Images with a 1:1 ratio are better displayed </p>
+                {% if form.pfp.errors %}
+                    <!-- <span class="text-danger error"> Error uploading image, please check file type </span><br> -->
+                    <br><span class="text-danger">{{ form.pfp.errors }}</span>
+                {% endif %}
+              </div>
+              <div class="form-group">
+                  {{ form.submit(class="s_btn") }}
+              </div>
+          </fieldset>
+      </form>
+  </div>
+  </div>
+  </div>
+{% endblock %}

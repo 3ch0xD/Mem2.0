@@ -1,0 +1,95 @@
+*{
+    color: #fff;
+}
+
+.content h1{
+    text-align: center;
+    margin: 10px 10px;
+}
+
+.sidebar-container{
+    position: absolute;
+    right: 0;
+    background-color: #1A1A1B;
+    border-radius: 5px;
+    border: 1.5px solid #343536;
+    min-width: 25%;
+    width: 25%;
+    margin: 80px 30px;
+    float: right;
+    position: fixed;
+}
+
+
+.sidebar{
+    padding: 10px 10px;
+    display: flex;
+    width: fit-content;
+}
+
+.sidebar-title{
+    color: #fff;
+    font-size: 35px;
+}
+
+.sidebar-logo{
+    margin-right: 10px;
+}
+
+p{
+    color: #fff;
+    padding: 10px 10px;
+}
+
+.create_post{
+    padding: 5px 10px;
+    color: #000;
+    outline: none;
+    border:none;
+    border-radius: 20px;
+    background-color: #fff;
+    margin: 0 10px;
+    transition: 0.5s;
+}
+
+.create_post_outline{
+    padding: 5px 10px;
+    color: #fff;
+    outline: none;
+    border:2px solid #fff;
+    border-radius: 20px;
+    background-color: transparent;
+    margin: 0 10px;
+    transition: 0.5s;
+}
+
+.create_post_outline:hover{
+    background-color: #fff;
+    transition: 0.5s;
+    color: #000;
+}
+
+
+.btnsd{
+    display: flex;
+    justify-content: center;
+    margin: 20px;
+}
+
+.create_post:hover{
+    background-color: transparent;
+    border: 2px solid #fff;
+    color: #fff;
+    transition: 0.5s;
+}
+
+.create_post strong{
+    color: #000;
+}
+
+@media screen and (max-width: 767px) {
+    .sidebar-container{
+        display: none;
+    }
+    
+}

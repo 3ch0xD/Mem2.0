@@ -1,0 +1,8 @@
+{% extends "base_structure.html" %}
+{% block error %}
+        <div class="error" style="display:flex; justify-content:center;">
+            <h1 class="img" style="float: left;">😮‍💨</h1>
+        </div>
+        <p style="text-align: center; color: #fff;">500</p>
+        <h1 style="color: #fff; text-align:center ;">{{ error }}</h1>
+{% endblock %}

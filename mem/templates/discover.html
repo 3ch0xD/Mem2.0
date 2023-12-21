@@ -1,0 +1,22 @@
+{% extends "base_structure.html" %}
+{% block content %}
+    <div class="page-contents2">
+        <div class="sidebar-papa">
+            <div class="sidebar-container">
+                <div class="sidebar">
+                    <img class="sidebar-logo" src="/static/images/favicon.ico" alt="logo" height="50px">
+                    <h1 class="sidebar-title">{{ navtitle }}</h1>
+                </div>
+                <p> Your personal sidebar to browse memes and quick shortcuts.</p>
+                <div class="btnsd">
+                    <a class="create_post" href="{{ url_for('new_post') }}"><strong>Create Post</strong></a>
+                    <a href="{{ url_for('discover') }}" class="create_post_outline"><strong>Browse Memes</strong></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <form method="POST" action="/discover">
+        <input id="lmaos" type="text" name="title" placeholder="Search by Title">
+    </form>
+{% endblock %}

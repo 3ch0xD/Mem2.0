@@ -1,0 +1,25 @@
+*{
+    color: #fff;
+}
+
+.s_btn{
+    background-color:#1A1A1B ;
+    outline: none;
+    border: none;
+    padding: 10px 10px;
+    margin: 10px 0px;
+    border-radius: 10px;
+}
+
+.s_btn:hover{
+    background-color: #fefeff46;
+}
+
+.current_post_image{
+    margin: 20px 10px;
+    border-radius: 10px 10px;
+}
+
+.scroll-enable{
+    margin-bottom: 100px;
+}
